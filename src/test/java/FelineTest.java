@@ -16,23 +16,27 @@ public class FelineTest {
     private Feline feline;
     @Test
     public void testEatMeat() throws Exception {
-        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Сало"));
-        List<String> result = feline.eatMeat();
-        assertEquals(List.of("Сало"), result);
+        String expectedFood = "Сало";
+        Mockito.when(feline.getFood("Хищник")).thenReturn(List.of(expectedFood));
+        List<String> actualFood = feline.eatMeat();
+        assertEquals(List.of(expectedFood), actualFood);
     }
     @Test
     public void testGetFamily() {
-        String result = feline.getFamily();
-        assertEquals("Кошачьи", result);
+        String expectedFamily = "Кошачьи";
+        String actualFamily = feline.getFamily();
+        assertEquals(expectedFamily, actualFamily);
     }
     @Test
     public void testGetKittens() {
-        int result = feline.getKittens();
-        assertEquals(1, result);
+        int expectedKittens = 1;
+        int actualKittens = feline.getKittens();
+        assertEquals(expectedKittens, actualKittens);
     }
     @Test
     public void testGetKittensCount() {
-        int result = feline.getKittens(7);
-        assertEquals(7, result);
+        int expectedKittens = 7;
+        int actualKittens = feline.getKittens(7);
+        assertEquals(expectedKittens, actualKittens);
     }
 }

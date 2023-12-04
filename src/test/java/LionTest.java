@@ -23,10 +23,14 @@ public class LionTest {
         assertEquals(42, result);
     }
     @Test
-    public void testDoesHaveMane() {
+    public void testDoesHaveManeMale() {
         Lion lion = new Lion("Самец", feline);
         assertTrue(lion.doesHaveMane());
-        lion = new Lion("Самка", feline);
+
+    }
+    @Test
+    public void testDoesHaveManeFemale() {
+        Lion lion = new Lion("Самка", feline);
         assertFalse(lion.doesHaveMane());
     }
     @Test
